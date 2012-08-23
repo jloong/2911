@@ -46,8 +46,11 @@ public class TennisFactory
     
     public Match makeTieBreakMatch (Player firstServer, int maxSetCount)
     {
-        // TODO
-        return null;
+    	if (maxSetCount == 3) {
+    		return new TieBreakMatch(firstServer, 2, 1); 
+    	}
+    	else 
+    		return new TieBreakMatch(firstServer, 3, 1);    
     }
     
     public Set makeAdvantageSet (Player firstServer)
@@ -57,8 +60,7 @@ public class TennisFactory
     
     public Set makeTieBreakSet (Player firstServer)
     {
-        // TODO
-        return null;
+    	return new TieBreakSet(firstServer, 6, 2);
     }
     
     public Game makeSinglesGame (Player server)
@@ -68,8 +70,7 @@ public class TennisFactory
     
     public Game makeTieBreakGame (Player firstServer)
     {
-        // TODO
-        return null;
+        return new TieBreakGame(firstServer, 7, 2);
     }
     
     public Point makePoint (Player server)
